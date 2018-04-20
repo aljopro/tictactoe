@@ -1,0 +1,73 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+.board-container {
+	margin: auto;
+	width: 75vmin;
+}
+
+.board {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.board__position {
+	position: relative;
+	width: 33%;
+	border: 1px solid #EEE;
+	align-self: flex-start;
+}
+
+.board__position:before {
+	content: "";
+	display: block;
+	padding-top: 100%;
+}
+
+.board__position:after {
+	content: attr(data-playertoken);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 10vmin;
+}
+
+.message, .actions {
+	display: flex;
+	align-items: center;
+	font-size: 10vmin;
+	height: 10vmin;
+	width: 75vmin;
+	justify-content: center;
+	margin: auto;
+
+}
+
+.player-message::after {
+	content: " " attr(data-playertoken);
+}
+
+.reset-button {
+	font-size:5vmin;
+	border-radius: 0;
+	border: 1px solid #888;
+	background: #FFF;
+	margin: auto;
+	padding: 2px;
+}
+.reset-button:hover {
+	background: #EEE;
+}
+
+.hidden {
+	display: none;
+}
